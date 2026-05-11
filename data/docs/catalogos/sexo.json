@@ -1,0 +1,16 @@
+[
+  {
+    "$set": {
+      "SEXO": {
+        "$switch": {
+          "branches": [
+            { "case": { "$eq": ["$SEXO", 1] }, "then": "MUJER" },
+            { "case": { "$eq": ["$SEXO", 2] }, "then": "HOMBRE" },
+            { "case": { "$eq": ["$SEXO", 99] }, "then": "NO ESPECIFICADO" }
+          ],
+          "default": "$SEXO"
+        }
+      }
+    }
+  }
+]

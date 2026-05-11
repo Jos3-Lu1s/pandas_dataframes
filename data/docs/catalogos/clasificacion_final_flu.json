@@ -1,0 +1,33 @@
+[
+  {
+    "$set": {
+      "CLASIFICACION_FINAL_FLU": {
+        "$switch": {
+          "branches": [
+            {
+              "case": { "$eq": ["$CLASIFICACION_FINAL_FLU", 3] },
+              "then": "CASO DE INFLUENZA CONFIRMADO"
+            },
+            {
+              "case": { "$eq": ["$CLASIFICACION_FINAL_FLU", 4] },
+              "then": "INVÁLIDO POR LABORATORIO"
+            },
+            {
+              "case": { "$eq": ["$CLASIFICACION_FINAL_FLU", 5] },
+              "then": "NO REALIZADO POR LABORATORIO"
+            },
+            {
+              "case": { "$eq": ["$CLASIFICACION_FINAL_FLU", 6] },
+              "then": "CASO SOSPECHOSO"
+            },
+            {
+              "case": { "$eq": ["$CLASIFICACION_FINAL_FLU", 7] },
+              "then": "NEGATIVO A INFLUENZA"
+            }
+          ],
+          "default": "$CLASIFICACION_FINAL_FLU"
+        }
+      }
+    }
+  }
+]

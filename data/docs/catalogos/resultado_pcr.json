@@ -1,0 +1,48 @@
+[
+  {
+    "$set": {
+      "RESULTADO_PCR": {
+        "$switch": {
+          "branches": [
+            { "case": { "$eq": ["$RESULTADO_PCR", 1] }, "then": "INFLUENZA AH1N1 PMD" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 2] }, "then": "INFLUENZA A H1" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 3] }, "then": "INFLUENZA A H3" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 4] }, "then": "INFLUENZA B" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 5] }, "then": "NEGATIVO" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 6] }, "then": "MUESTRA NO ADECUADA" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 7] }, "then": "ADENOVIRUS" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 8] }, "then": "PARAINFLUENZA 1" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 9] }, "then": "PARAINFLUENZA 2" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 10] }, "then": "PARAINFLUENZA 3" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 11] }, "then": "VIRUS SINCICIAL RESPIRATORIO" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 13] }, "then": "INFLUENZA A NO SUBTIPIFICADA" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 14] }, "then": "INFLUENZA A H5" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 17] }, "then": "MUESTRA RECHAZADA" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 20] }, "then": "VIRUS SINCICIAL RESPIRATORIO A" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 21] }, "then": "VIRUS SINCICIAL RESPIRATORIO B" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 22] }, "then": "CORONA 229E" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 23] }, "then": "CORONA OC43" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 24] }, "then": "CORONA SARS" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 25] }, "then": "CORONA NL63" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 26] }, "then": "CORONA HKU1" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 27] }, "then": "MUESTRA QUE NO AMPLIFICO" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 28] }, "then": "ENTEROV//RHINOVIRUS" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 29] }, "then": "METAPNEUMOVIRUS" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 30] }, "then": "MUESTRA SIN AISLAMIENTO" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 32] }, "then": "PARAINFLUENZA 4" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 33] }, "then": "MUESTRA SIN CELULAS" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 34] }, "then": "SARS-CoV-2" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 35] }, "then": "MERS-CoV" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 36] }, "then": "SARS-CoV" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 37] }, "then": "BOCAVIRUS" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 41] }, "then": "MUESTRA NO RECIBIDA" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 997] }, "then": "NO APLICA (CASO SIN MUESTRA)" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 998] }, "then": "SIN COINFECCIÓN" },
+            { "case": { "$eq": ["$RESULTADO_PCR", 999] }, "then": "PENDIENTE" }
+          ],
+          "default": "$RESULTADO_PCR"
+        }
+      }
+    }
+  }
+]

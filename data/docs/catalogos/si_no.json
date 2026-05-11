@@ -1,0 +1,265 @@
+[
+  {
+    "$set": {
+      "INTUBADO": {
+        "$switch": {
+          "branches": [
+            { "case": { "$eq": ["$INTUBADO", 1] }, "then": "SI" },
+            { "case": { "$eq": ["$INTUBADO", 2] }, "then": "NO" },
+            { "case": { "$eq": ["$INTUBADO", 97] }, "then": "NO APLICA" },
+            { "case": { "$eq": ["$INTUBADO", 98] }, "then": "SE IGNORA" },
+            { "case": { "$eq": ["$INTUBADO", 99] }, "then": "NO ESPECIFICADO" }
+          ],
+          "default": "$INTUBADO"
+        }
+      },
+
+      "NEUMONIA": {
+        "$switch": {
+          "branches": [
+            { "case": { "$eq": ["$NEUMONIA", 1] }, "then": "SI" },
+            { "case": { "$eq": ["$NEUMONIA", 2] }, "then": "NO" },
+            { "case": { "$eq": ["$NEUMONIA", 97] }, "then": "NO APLICA" },
+            { "case": { "$eq": ["$NEUMONIA", 98] }, "then": "SE IGNORA" },
+            { "case": { "$eq": ["$NEUMONIA", 99] }, "then": "NO ESPECIFICADO" }
+          ],
+          "default": "$NEUMONIA"
+        }
+      },
+
+      "EMBARAZO": {
+        "$switch": {
+          "branches": [
+            { "case": { "$eq": ["$EMBARAZO", 1] }, "then": "SI" },
+            { "case": { "$eq": ["$EMBARAZO", 2] }, "then": "NO" },
+            { "case": { "$eq": ["$EMBARAZO", 97] }, "then": "NO APLICA" },
+            { "case": { "$eq": ["$EMBARAZO", 98] }, "then": "SE IGNORA" },
+            { "case": { "$eq": ["$EMBARAZO", 99] }, "then": "NO ESPECIFICADO" }
+          ],
+          "default": "$EMBARAZO"
+        }
+      },
+
+      "HABLA_LENGUA_INDIG": {
+        "$switch": {
+          "branches": [
+            { "case": { "$eq": ["$HABLA_LENGUA_INDIG", 1] }, "then": "SI" },
+            { "case": { "$eq": ["$HABLA_LENGUA_INDIG", 2] }, "then": "NO" },
+            { "case": { "$eq": ["$HABLA_LENGUA_INDIG", 97] }, "then": "NO APLICA" },
+            { "case": { "$eq": ["$HABLA_LENGUA_INDIG", 98] }, "then": "SE IGNORA" },
+            { "case": { "$eq": ["$HABLA_LENGUA_INDIG", 99] }, "then": "NO ESPECIFICADO" }
+          ],
+          "default": "$HABLA_LENGUA_INDIG"
+        }
+      },
+
+      "INDIGENA": {
+        "$switch": {
+          "branches": [
+            { "case": { "$eq": ["$INDIGENA", 1] }, "then": "SI" },
+            { "case": { "$eq": ["$INDIGENA", 2] }, "then": "NO" },
+            { "case": { "$eq": ["$INDIGENA", 97] }, "then": "NO APLICA" },
+            { "case": { "$eq": ["$INDIGENA", 98] }, "then": "SE IGNORA" },
+            { "case": { "$eq": ["$INDIGENA", 99] }, "then": "NO ESPECIFICADO" }
+          ],
+          "default": "$INDIGENA"
+        }
+      },
+
+      "DIABETES": {
+        "$switch": {
+          "branches": [
+            { "case": { "$eq": ["$DIABETES", 1] }, "then": "SI" },
+            { "case": { "$eq": ["$DIABETES", 2] }, "then": "NO" },
+            { "case": { "$eq": ["$DIABETES", 97] }, "then": "NO APLICA" },
+            { "case": { "$eq": ["$DIABETES", 98] }, "then": "SE IGNORA" },
+            { "case": { "$eq": ["$DIABETES", 99] }, "then": "NO ESPECIFICADO" }
+          ],
+          "default": "$DIABETES"
+        }
+      },
+
+      "EPOC": {
+        "$switch": {
+          "branches": [
+            { "case": { "$eq": ["$EPOC", 1] }, "then": "SI" },
+            { "case": { "$eq": ["$EPOC", 2] }, "then": "NO" },
+            { "case": { "$eq": ["$EPOC", 97] }, "then": "NO APLICA" },
+            { "case": { "$eq": ["$EPOC", 98] }, "then": "SE IGNORA" },
+            { "case": { "$eq": ["$EPOC", 99] }, "then": "NO ESPECIFICADO" }
+          ],
+          "default": "$EPOC"
+        }
+      },
+
+      "ASMA": {
+        "$switch": {
+          "branches": [
+            { "case": { "$eq": ["$ASMA", 1] }, "then": "SI" },
+            { "case": { "$eq": ["$ASMA", 2] }, "then": "NO" },
+            { "case": { "$eq": ["$ASMA", 97] }, "then": "NO APLICA" },
+            { "case": { "$eq": ["$ASMA", 98] }, "then": "SE IGNORA" },
+            { "case": { "$eq": ["$ASMA", 99] }, "then": "NO ESPECIFICADO" }
+          ],
+          "default": "$ASMA"
+        }
+      },
+
+      "INMUSUPR": {
+        "$switch": {
+          "branches": [
+            { "case": { "$eq": ["$INMUSUPR", 1] }, "then": "SI" },
+            { "case": { "$eq": ["$INMUSUPR", 2] }, "then": "NO" },
+            { "case": { "$eq": ["$INMUSUPR", 97] }, "then": "NO APLICA" },
+            { "case": { "$eq": ["$INMUSUPR", 98] }, "then": "SE IGNORA" },
+            { "case": { "$eq": ["$INMUSUPR", 99] }, "then": "NO ESPECIFICADO" }
+          ],
+          "default": "$INMUSUPR"
+        }
+      },
+
+      "HIPERTENSION": {
+        "$switch": {
+          "branches": [
+            { "case": { "$eq": ["$HIPERTENSION", 1] }, "then": "SI" },
+            { "case": { "$eq": ["$HIPERTENSION", 2] }, "then": "NO" },
+            { "case": { "$eq": ["$HIPERTENSION", 97] }, "then": "NO APLICA" },
+            { "case": { "$eq": ["$HIPERTENSION", 98] }, "then": "SE IGNORA" },
+            { "case": { "$eq": ["$HIPERTENSION", 99] }, "then": "NO ESPECIFICADO" }
+          ],
+          "default": "$HIPERTENSION"
+        }
+      },
+
+      "OTRA_COM": {
+        "$switch": {
+          "branches": [
+            { "case": { "$eq": ["$OTRA_COM", 1] }, "then": "SI" },
+            { "case": { "$eq": ["$OTRA_COM", 2] }, "then": "NO" },
+            { "case": { "$eq": ["$OTRA_COM", 97] }, "then": "NO APLICA" },
+            { "case": { "$eq": ["$OTRA_COM", 98] }, "then": "SE IGNORA" },
+            { "case": { "$eq": ["$OTRA_COM", 99] }, "then": "NO ESPECIFICADO" }
+          ],
+          "default": "$OTRA_COM"
+        }
+      },
+
+      "CARDIOVASCULAR": {
+        "$switch": {
+          "branches": [
+            { "case": { "$eq": ["$CARDIOVASCULAR", 1] }, "then": "SI" },
+            { "case": { "$eq": ["$CARDIOVASCULAR", 2] }, "then": "NO" },
+            { "case": { "$eq": ["$CARDIOVASCULAR", 97] }, "then": "NO APLICA" },
+            { "case": { "$eq": ["$CARDIOVASCULAR", 98] }, "then": "SE IGNORA" },
+            { "case": { "$eq": ["$CARDIOVASCULAR", 99] }, "then": "NO ESPECIFICADO" }
+          ],
+          "default": "$CARDIOVASCULAR"
+        }
+      },
+
+      "OBESIDAD": {
+        "$switch": {
+          "branches": [
+            { "case": { "$eq": ["$OBESIDAD", 1] }, "then": "SI" },
+            { "case": { "$eq": ["$OBESIDAD", 2] }, "then": "NO" },
+            { "case": { "$eq": ["$OBESIDAD", 97] }, "then": "NO APLICA" },
+            { "case": { "$eq": ["$OBESIDAD", 98] }, "then": "SE IGNORA" },
+            { "case": { "$eq": ["$OBESIDAD", 99] }, "then": "NO ESPECIFICADO" }
+          ],
+          "default": "$OBESIDAD"
+        }
+      },
+
+      "RENAL_CRONICA": {
+        "$switch": {
+          "branches": [
+            { "case": { "$eq": ["$RENAL_CRONICA", 1] }, "then": "SI" },
+            { "case": { "$eq": ["$RENAL_CRONICA", 2] }, "then": "NO" },
+            { "case": { "$eq": ["$RENAL_CRONICA", 97] }, "then": "NO APLICA" },
+            { "case": { "$eq": ["$RENAL_CRONICA", 98] }, "then": "SE IGNORA" },
+            { "case": { "$eq": ["$RENAL_CRONICA", 99] }, "then": "NO ESPECIFICADO" }
+          ],
+          "default": "$RENAL_CRONICA"
+        }
+      },
+
+      "TABAQUISMO": {
+        "$switch": {
+          "branches": [
+            { "case": { "$eq": ["$TABAQUISMO", 1] }, "then": "SI" },
+            { "case": { "$eq": ["$TABAQUISMO", 2] }, "then": "NO" },
+            { "case": { "$eq": ["$TABAQUISMO", 97] }, "then": "NO APLICA" },
+            { "case": { "$eq": ["$TABAQUISMO", 98] }, "then": "SE IGNORA" },
+            { "case": { "$eq": ["$TABAQUISMO", 99] }, "then": "NO ESPECIFICADO" }
+          ],
+          "default": "$TABAQUISMO"
+        }
+      },
+
+      "OTRO_CASO": {
+        "$switch": {
+          "branches": [
+            { "case": { "$eq": ["$OTRO_CASO", 1] }, "then": "SI" },
+            { "case": { "$eq": ["$OTRO_CASO", 2] }, "then": "NO" },
+            { "case": { "$eq": ["$OTRO_CASO", 97] }, "then": "NO APLICA" },
+            { "case": { "$eq": ["$OTRO_CASO", 98] }, "then": "SE IGNORA" },
+            { "case": { "$eq": ["$OTRO_CASO", 99] }, "then": "NO ESPECIFICADO" }
+          ],
+          "default": "$OTRO_CASO"
+        }
+      },
+
+      "TOMA_MUESTRA_LAB": {
+        "$switch": {
+          "branches": [
+            { "case": { "$eq": ["$TOMA_MUESTRA_LAB", 1] }, "then": "SI" },
+            { "case": { "$eq": ["$TOMA_MUESTRA_LAB", 2] }, "then": "NO" },
+            { "case": { "$eq": ["$TOMA_MUESTRA_LAB", 97] }, "then": "NO APLICA" },
+            { "case": { "$eq": ["$TOMA_MUESTRA_LAB", 98] }, "then": "SE IGNORA" },
+            { "case": { "$eq": ["$TOMA_MUESTRA_LAB", 99] }, "then": "NO ESPECIFICADO" }
+          ],
+          "default": "$TOMA_MUESTRA_LAB"
+        }
+      },
+
+      "TOMA_MUESTRA_ANTIGENO": {
+        "$switch": {
+          "branches": [
+            { "case": { "$eq": ["$TOMA_MUESTRA_ANTIGENO", 1] }, "then": "SI" },
+            { "case": { "$eq": ["$TOMA_MUESTRA_ANTIGENO", 2] }, "then": "NO" },
+            { "case": { "$eq": ["$TOMA_MUESTRA_ANTIGENO", 97] }, "then": "NO APLICA" },
+            { "case": { "$eq": ["$TOMA_MUESTRA_ANTIGENO", 98] }, "then": "SE IGNORA" },
+            { "case": { "$eq": ["$TOMA_MUESTRA_ANTIGENO", 99] }, "then": "NO ESPECIFICADO" }
+          ],
+          "default": "$TOMA_MUESTRA_ANTIGENO"
+        }
+      },
+
+      "MIGRANTE": {
+        "$switch": {
+          "branches": [
+            { "case": { "$eq": ["$MIGRANTE", 1] }, "then": "SI" },
+            { "case": { "$eq": ["$MIGRANTE", 2] }, "then": "NO" },
+            { "case": { "$eq": ["$MIGRANTE", 97] }, "then": "NO APLICA" },
+            { "case": { "$eq": ["$MIGRANTE", 98] }, "then": "SE IGNORA" },
+            { "case": { "$eq": ["$MIGRANTE", 99] }, "then": "NO ESPECIFICADO" }
+          ],
+          "default": "$MIGRANTE"
+        }
+      },
+
+      "UCI": {
+        "$switch": {
+          "branches": [
+            { "case": { "$eq": ["$UCI", 1] }, "then": "SI" },
+            { "case": { "$eq": ["$UCI", 2] }, "then": "NO" },
+            { "case": { "$eq": ["$UCI", 97] }, "then": "NO APLICA" },
+            { "case": { "$eq": ["$UCI", 98] }, "then": "SE IGNORA" },
+            { "case": { "$eq": ["$UCI", 99] }, "then": "NO ESPECIFICADO" }
+          ],
+          "default": "$UCI"
+        }
+      }
+    }
+  }
+]

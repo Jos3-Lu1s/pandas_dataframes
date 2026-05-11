@@ -1,0 +1,16 @@
+[
+  {
+    "$set": {
+      "NACIONALIDAD": {
+        "$switch": {
+          "branches": [
+            { "case": { "$eq": ["$NACIONALIDAD", 1] }, "then": "MEXICANA" },
+            { "case": { "$eq": ["$NACIONALIDAD", 2] }, "then": "EXTRANJERA" },
+            { "case": { "$eq": ["$NACIONALIDAD", 99] }, "then": "NO ESPECIFICADO" }
+          ],
+          "default": "$NACIONALIDAD"
+        }
+      }
+    }
+  }
+]

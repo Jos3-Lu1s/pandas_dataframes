@@ -1,0 +1,16 @@
+[
+  {
+    "$set": {
+      "RESULTADO_ANTIGENO": {
+        "$switch": {
+          "branches": [
+            { "case": { "$eq": ["$RESULTADO_ANTIGENO", 1] }, "then": "POSITIVO A SARS-COV-2" },
+            { "case": { "$eq": ["$RESULTADO_ANTIGENO", 2] }, "then": "NEGATIVO A SARS-COV-2" },
+            { "case": { "$eq": ["$RESULTADO_ANTIGENO", 97] }, "then": "NO APLICA (CASO SIN MUESTRA)" }
+          ],
+          "default": "$RESULTADO_ANTIGENO"
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "$set": {
+      "SECTOR": {
+        "$switch": {
+          "branches": [
+            { "case": { "$eq": ["$SECTOR", 1] }, "then": "CRUZ ROJA" },
+            { "case": { "$eq": ["$SECTOR", 2] }, "then": "DIF" },
+            { "case": { "$eq": ["$SECTOR", 3] }, "then": "ESTATAL" },
+            { "case": { "$eq": ["$SECTOR", 4] }, "then": "IMSS" },
+            { "case": { "$eq": ["$SECTOR", 5] }, "then": "IMSS-BIENESTAR" },
+            { "case": { "$eq": ["$SECTOR", 6] }, "then": "ISSSTE" },
+            { "case": { "$eq": ["$SECTOR", 7] }, "then": "MUNICIPAL" },
+            { "case": { "$eq": ["$SECTOR", 8] }, "then": "PEMEX" },
+            { "case": { "$eq": ["$SECTOR", 9] }, "then": "PRIVADA" },
+            { "case": { "$eq": ["$SECTOR", 10] }, "then": "SEDENA" },
+            { "case": { "$eq": ["$SECTOR", 11] }, "then": "SEMAR" },
+            { "case": { "$eq": ["$SECTOR", 12] }, "then": "SSA" },
+            { "case": { "$eq": ["$SECTOR", 13] }, "then": "UNIVERSITARIO" },
+            { "case": { "$eq": ["$SECTOR", 14] }, "then": "CIJ" },
+            { "case": { "$eq": ["$SECTOR", 15] }, "then": "IMSS Bienestar OPD" },
+            { "case": { "$eq": ["$SECTOR", 99] }, "then": "NO ESPECIFICADO" }
+          ],
+          "default": "$SECTOR"
+        }
+      }
+    }
+  }
+]
