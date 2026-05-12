@@ -13,6 +13,7 @@ KDD/
 ├── imports/               # Carpeta vinculada al contenedor de MongoDB para importación.
 ├── compose.yml            # Configuración de Docker para MongoDB.
 ├── main.py                # Script principal de procesamiento de datos.
+├── update_catalogs.py     # Script para actualización masiva de catálogos en MongoDB.
 └── requirements.txt       # Dependencias de Python.
 ```
 
@@ -23,20 +24,21 @@ KDD/
 
 ## Configuración e Instalación
 
-1.  **Entorno de Python:**
-    Se recomienda usar un entorno virtual:
+1. **Entorno de Python:**
+   Se recomienda usar un entorno virtual:
 
-    ```bash
-    python -m venv venv
-    .\venv\Scripts\activate  # En Windows
-    pip install -r requirements.txt
-    ```
+   ```bash
+   python -m venv venv
+   .\venv\Scripts\activate  # En Windows
+   pip install -r requirements.txt
+   ```
 
-2.  **Infraestructura (MongoDB):**
-    Levantar el contenedor de base de datos:
-    ```bash
-    docker-compose up -d
-    ```
+2. **Infraestructura (MongoDB):**
+   Levantar el contenedor de base de datos:
+
+   ```bash
+   docker-compose up -d
+   ```
 
 ## Flujo de Trabajo
 
@@ -58,11 +60,22 @@ El resultado se guardará en `data/filtered/datos_filtrados.csv`.
 
 Para importar los datos procesados a la base de datos:
 
-1.  Copie el archivo generado `data/filtered/datos_filtrados.csv` a la carpeta `imports/`.
-2.  Ejecute el comando de importación dentro del contenedor de MongoDB:
-    ```bash
-    docker exec -it mongo mongoimport --username admin --password password123 --authenticationDatabase admin --db KddCovid19 --collection KddPuebla --type csv --headerline --file /imports/datos_filtrados.csv
-    ```
+1. Copie el archivo generado `data/filtered/datos_filtrados.csv` a la carpeta `imports/`.
+2. Ejecute el comando de importación dentro del contenedor de MongoDB:
+
+   ```bash
+   docker exec -it mongo mongoimport --username admin --password password123 --authenticationDatabase admin --db KddCovid19 --collection KddPuebla --type csv --headerline --file /imports/datos_filtrados.csv
+   ```
+
+### 4. Actualización de Catálogos (Mapeo de Valores)
+
+Una vez que los datos están en MongoDB, los valores numéricos de las columnas (como `SEXO`, `INTUBADO`, etc.) deben mapearse a sus etiquetas legibles. Para hacer esto de forma masiva con todos los archivos JSON de la carpeta `catalogos`:
+
+```bash
+python update_catalogs.py
+```
+
+Este script aplicará automáticamente cada pipeline de actualización definido en los archivos JSON a la colección de la base de datos.
 
 ## Notas Adicionales
 
