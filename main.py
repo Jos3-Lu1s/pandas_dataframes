@@ -1,13 +1,45 @@
 import pandas as pd
 from pathlib import Path
 
+def mostrar_encabezados():
+    raw_dir = Path("data/raw")
+    csv_files = list(raw_dir.glob("*.csv"))
+
+    if not csv_files:
+        print("No se encontraron archivos CSV en data/raw.")
+        return
+
+    print("\n--- Inspección de Encabezados (Detectar errores de codificación) ---")
+    for f in csv_files:
+        print(f"\nArchivo: {f.name}")
+        try:
+            with open(f, 'rb') as binary_file:
+                # Leer la primera línea como bytes
+                first_line_raw = binary_file.readline()
+                
+                # Probar diferentes codificaciones comunes
+                for enc in ['utf-8', 'utf-8-sig', 'latin-1', 'cp1252']:
+                    try:
+                        decoded = first_line_raw.decode(enc)
+                        # Mostrar solo los primeros 150 caracteres para no saturar
+                        print(f"  [{enc:10}]: {decoded.strip()[:150]}...")
+                    except UnicodeDecodeError:
+                        print(f"  [{enc:10}]: [ERROR DE DECODIFICACIÓN]")
+        except Exception as e:
+            print(f"  Error al abrir el archivo: {e}")
+    print("-" * 60)
+
 def unificar_csvs():
     # Rutas de las carpetas
     raw_dir = Path("data/raw")
     
     # Preguntar al usuario por opciones
-    print("--- Configuración de Procesamiento ---")
-    add_filename = input("¿Desea agregar una columna con el nombre del archivo original? (s/n): ").lower() == 's'
+    print("\n--- Configuración de Procesamiento ---")
+    inspect = input("¿Desea inspeccionar los encabezados antes de continuar? (s/n): ").lower() == 's'
+    if inspect:
+        mostrar_encabezados()
+
+    add_filename = input("\n¿Desea agregar una columna con el nombre del archivo original? (s/n): ").lower() == 's'
     apply_filter = input("¿Desea filtrar los datos por entidad? (s/n): ").lower() == 's'
     
     entidad = None
@@ -45,7 +77,19 @@ def unificar_csvs():
     for f in csv_files:
         try:
             print(f"Procesando: {f.name}...")
-            df = pd.read_csv(f, low_memory=False, encoding="latin-1")
+            
+            # Detección automática de codificación (UTF-8 con BOM vs Latin-1)
+            encoding_to_use = "latin-1"
+            with open(f, 'rb') as test_file:
+                raw_bytes = test_file.read(3)
+                if raw_bytes == b'\xef\xbb\xbf':
+                    encoding_to_use = "utf-8-sig"
+            
+            print(f"  Codificación detectada: {encoding_to_use}")
+            df = pd.read_csv(f, low_memory=False, encoding=encoding_to_use)
+            
+            # Limpiar nombres de columnas por si acaso hay espacios extra
+            df.columns = [col.strip().replace('"', '') for col in df.columns]
             
             if apply_filter:
                 # Filtrar por ENTIDAD_RES o ENTIDAD_NAC
