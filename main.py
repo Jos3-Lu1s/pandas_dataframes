@@ -157,6 +157,21 @@ def unificar_csvs():
                 else:
                     print("No se encontraron columnas válidas para eliminar.")
 
+        # Opción para convertir fechas
+        print("\n--- Conversión de Fechas ---")
+        convert_dates = input("¿Desea convertir las columnas de fecha a formato temporal? (s/n): ").lower() == 's'
+        if convert_dates:
+            # Identificar columnas que probablemente son fechas
+            date_cols = [c for c in df_final.columns if 'FECHA' in c.upper()]
+            if date_cols:
+                print(f"Columnas detectadas para conversión: {date_cols}")
+                for col in date_cols:
+                    # Convertir '9999-99-99' y otros errores a NaT (Not a Time)
+                    df_final[col] = pd.to_datetime(df_final[col], errors='coerce')
+                print("Conversión completada. Los valores como '9999-99-99' ahora son nulos (NaN).")
+            else:
+                print("No se encontraron columnas de fecha.")
+
         # Guardar
         df_final.to_csv(output_file, index=False, encoding="utf-8-sig")
         print(f"\nÉxito: Archivo guardado en {output_file}")
