@@ -139,6 +139,24 @@ def unificar_csvs():
             print(f"Registros eliminados: {before_count - after_count}")
             print(f"Registros restantes: {after_count}")
 
+        # Opción para eliminar columnas
+        print("\n--- Selección de Columnas ---")
+        drop_cols = input("¿Desea eliminar algunas columnas? (s/n): ").lower() == 's'
+        if drop_cols:
+            print("\nColumnas actuales:", list(df_final.columns))
+            cols_to_drop_input = input("Ingrese los nombres de las columnas a ELIMINAR separadas por coma: ").strip()
+            
+            if cols_to_drop_input:
+                cols_to_drop = [c.strip() for c in cols_to_drop_input.split(',')]
+                # Validar que las columnas existan antes de intentar borrarlas
+                valid_cols_to_drop = [c for c in cols_to_drop if c in df_final.columns]
+                
+                if valid_cols_to_drop:
+                    df_final = df_final.drop(columns=valid_cols_to_drop)
+                    print(f"Columnas eliminadas: {valid_cols_to_drop}")
+                else:
+                    print("No se encontraron columnas válidas para eliminar.")
+
         # Guardar
         df_final.to_csv(output_file, index=False, encoding="utf-8-sig")
         print(f"\nÉxito: Archivo guardado en {output_file}")
