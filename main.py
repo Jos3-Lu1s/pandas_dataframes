@@ -117,6 +117,28 @@ def unificar_csvs():
         print("\nConcatenando archivos...")
         df_final = pd.concat(dfs, ignore_index=True)
         
+        # Opción para quitar duplicados
+        print("\n--- Limpieza de Duplicados ---")
+        drop_dup = input("¿Desea eliminar registros duplicados? (s/n): ").lower() == 's'
+        if drop_dup:
+            print("\nColumnas disponibles:", list(df_final.columns))
+            cols_input = input("Ingrese las columnas para identificar duplicados separadas por coma (o presione Enter para usar TODAS): ").strip()
+            
+            subset = None
+            if cols_input:
+                subset = [c.strip() for c in cols_input.split(',')]
+                # Validar que las columnas existan
+                subset = [c for c in subset if c in df_final.columns]
+                if not subset:
+                    print("No se reconocieron las columnas ingresadas. Se usarán todas.")
+                    subset = None
+            
+            before_count = len(df_final)
+            df_final = df_final.drop_duplicates(subset=subset)
+            after_count = len(df_final)
+            print(f"Registros eliminados: {before_count - after_count}")
+            print(f"Registros restantes: {after_count}")
+
         # Guardar
         df_final.to_csv(output_file, index=False, encoding="utf-8-sig")
         print(f"\nÉxito: Archivo guardado en {output_file}")
