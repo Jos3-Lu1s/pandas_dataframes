@@ -1,0 +1,66 @@
+[
+  {
+    "$set": {
+      "MUNICIPIO_RES": {
+        "$switch": {
+          "branches": [
+            { "case": { "$eq": ["$MUNICIPIO_RES", 1] }, "then": "ABASOLO" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 2] }, "then": "AGUALEGUAS" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 3] }, "then": "LOS ALDAMAS" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 4] }, "then": "ALLENDE" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 5] }, "then": "ANÁHUAC" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 6] }, "then": "APODACA" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 7] }, "then": "ARAMBERRI" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 8] }, "then": "BUSTAMANTE" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 9] }, "then": "CADEREYTA JIMÉNEZ" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 10] }, "then": "EL CARMEN" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 11] }, "then": "CERRALVO" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 12] }, "then": "CIÉNEGA DE FLORES" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 13] }, "then": "CHINA" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 14] }, "then": "DOCTOR ARROYO" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 15] }, "then": "DOCTOR COSS" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 16] }, "then": "DOCTOR GONZÁLEZ" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 17] }, "then": "GALEANA" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 18] }, "then": "GARCÍA" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 19] }, "then": "SAN PEDRO GARZA GARCÍA" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 20] }, "then": "GENERAL BRAVO" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 21] }, "then": "GENERAL ESCOBEDO" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 22] }, "then": "GENERAL TERÁN" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 23] }, "then": "GENERAL TREVIÑO" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 24] }, "then": "GENERAL ZARAGOZA" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 25] }, "then": "GENERAL ZUAZUA" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 26] }, "then": "GUADALUPE" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 27] }, "then": "LOS HERRERAS" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 28] }, "then": "HIGUERAS" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 29] }, "then": "HUALAHUISES" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 30] }, "then": "ITURBIDE" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 31] }, "then": "JUÁREZ" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 32] }, "then": "LAMPAZOS DE NARANJO" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 33] }, "then": "LINARES" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 34] }, "then": "MARÍN" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 35] }, "then": "MELCHOR OCAMPO" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 36] }, "then": "MIER Y NORIEGA" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 37] }, "then": "MINA" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 38] }, "then": "MONTEMORELOS" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 39] }, "then": "MONTERREY" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 40] }, "then": "PARÁS" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 41] }, "then": "PESQUERÍA" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 42] }, "then": "LOS RAMONES" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 43] }, "then": "RAYONES" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 44] }, "then": "SABINAS HIDALGO" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 45] }, "then": "SALINAS VICTORIA" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 46] }, "then": "SAN NICOLÁS DE LOS GARZA" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 47] }, "then": "HIDALGO" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 48] }, "then": "SANTA CATARINA" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 49] }, "then": "SANTIAGO" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 50] }, "then": "VALLECILLO" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 51] }, "then": "VILLALDAMA" },
+            { "case": { "$eq": ["$MUNICIPIO_RES", 999] }, "then": "NO ESPECIFICADO" }
+
+          ],
+          "default": "$MUNICIPIO_RES"
+        }
+      }
+    }
+  }
+]
