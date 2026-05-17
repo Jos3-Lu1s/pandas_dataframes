@@ -1,7 +1,9 @@
 import pandas as pd
 from pathlib import Path
+from pymongo import MongoClient
 
 def mostrar_encabezados():
+    # ... (sin cambios) ...
     raw_dir = Path("data/raw")
     csv_files = list(raw_dir.glob("*.csv"))
 
@@ -161,21 +163,58 @@ def unificar_csvs():
         print("\n--- Conversión de Fechas ---")
         convert_dates = input("¿Desea convertir las columnas de fecha a formato temporal? (s/n): ").lower() == 's'
         if convert_dates:
-            # Identificar columnas que probablemente son fechas
             date_cols = [c for c in df_final.columns if 'FECHA' in c.upper()]
             if date_cols:
                 print(f"Columnas detectadas para conversión: {date_cols}")
                 for col in date_cols:
-                    # Convertir '9999-99-99' y otros errores a NaT (Not a Time)
-                    df_final[col] = pd.to_datetime(df_final[col], errors='coerce')
-                print("Conversión completada. Los valores como '9999-99-99' ahora son nulos (NaN).")
+                    # Forzamos formato YYYY-MM-DD para evitar advertencias y asegurar consistencia
+                    df_final[col] = pd.to_datetime(df_final[col], format='%Y-%m-%d', errors='coerce')
+                print("Conversión completada. Los valores como '9999-99-99' ahora son nulos.")
             else:
                 print("No se encontraron columnas de fecha.")
 
-        # Guardar
+        # Guardar en CSV
         df_final.to_csv(output_file, index=False, encoding="utf-8-sig")
-        print(f"\nÉxito: Archivo guardado en {output_file}")
+        print(f"\nÉxito: Archivo CSV guardado en {output_file}")
         print(f"Total de filas: {len(df_final)}")
+
+        # Opción para importar a MongoDB
+        print("\n--- Importación a MongoDB ---")
+        import_mongo = input("¿Desea importar los datos directamente a MongoDB? (s/n): ").lower() == 's'
+        if import_mongo:
+            try:
+                uri = "mongodb://admin:password123@localhost:27017/?authSource=admin"
+                db_name = "KddCovid19"
+                collection_name = "KddPuebla"
+                
+                print(f"Conectando a MongoDB ({db_name}.{collection_name})...")
+                client = MongoClient(uri)
+                db = client[db_name]
+                collection = db[collection_name]
+                
+                # Limpiar la colección antes de importar (opcional, podrías comentar esto)
+                if input("¿Desea vaciar la colección antes de la importación? (s/n): ").lower() == 's':
+                    collection.delete_many({})
+                    print("Colección vaciada.")
+
+                # Preparar datos: Pandas NaT/NaN deben ser None para MongoDB
+                # Convertimos a object para que permita None en lugar de NaT
+                print("Preparando datos para MongoDB (esto puede tomar un momento)...")
+                df_temp = df_final.astype(object).where(pd.notnull(df_final), None)
+                records = df_temp.to_dict('records')
+                
+                print(f"Insertando {len(records)} registros...")
+                # Insertar en bloques para mayor seguridad con datasets grandes
+                batch_size = 50000
+                for i in range(0, len(records), batch_size):
+                    batch = records[i:i + batch_size]
+                    collection.insert_many(batch)
+                    print(f"  Progreso: {min(i + batch_size, len(records))}/{len(records)}")
+                
+                print("¡Importación a MongoDB completada con éxito!")
+                client.close()
+            except Exception as e:
+                print(f"Error al importar a MongoDB: {e}")
     else:
         print("No se pudo procesar ningún archivo o no hubo coincidencias con el filtro.")
 

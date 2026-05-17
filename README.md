@@ -77,6 +77,24 @@ python update_catalogs.py
 
 Este script aplicará automáticamente cada pipeline de actualización definido en los archivos JSON a la colección de la base de datos.
 
+## Respaldo y Restauración de Datos
+
+### Generar Respaldo (Backup)
+
+Para generar un respaldo comprimido de la base de datos completa:
+
+```bash
+mongodump --db KddCovid19 --username admin --password password123 --authenticationDatabase admin --archive=backup.gz --gzip
+```
+
+### Restaurar Respaldo (Restore)
+
+Para restaurar la base de datos desde un archivo de respaldo (asegúrese de que el archivo esté en la carpeta `imports/` si lo ejecuta desde el contenedor):
+
+```bash
+mongorestore --username admin --password password123 --authenticationDatabase admin --archive=/imports/backup.gz --gzip
+```
+
 ## Notas Adicionales
 
 - **Control de Versiones:** Los archivos `.csv` y `.xlsx` están ignorados en `.gitignore` para evitar subir grandes volúmenes de datos al repositorio. Asegúrese de respaldar sus datos originales y procesados de forma independiente.
