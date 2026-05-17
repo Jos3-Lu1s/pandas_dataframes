@@ -1,14 +1,17 @@
 import json
 from pathlib import Path
 from pymongo import MongoClient
-import sys
+import os
+from dotenv import load_dotenv
+
+# Cargar variables de entorno
+load_dotenv()
 
 def apply_catalogs():
     # Configuración de MongoDB
-    # Estos valores se obtuvieron de compose.yml y README.md
-    uri = "mongodb://admin:password123@localhost:27017/?authSource=admin"
-    db_name = "KddCovid19"
-    collection_name = "KddPuebla"
+    uri = os.getenv("MONGO_URI", "mongodb://admin:password123@localhost:27017/?authSource=admin")
+    db_name = os.getenv("MONGO_DB", "KddCovid19")
+    collection_name = os.getenv("MONGO_COLLECTION", "KddPuebla")
     
     catalogs_dir = Path("data/docs/catalogos")
     

@@ -1,9 +1,13 @@
 import pandas as pd
 from pathlib import Path
 from pymongo import MongoClient
+import os
+from dotenv import load_dotenv
+
+# Cargar variables de entorno
+load_dotenv()
 
 def mostrar_encabezados():
-    # ... (sin cambios) ...
     raw_dir = Path("data/raw")
     csv_files = list(raw_dir.glob("*.csv"))
 
@@ -183,9 +187,9 @@ def unificar_csvs():
         import_mongo = input("¿Desea importar los datos directamente a MongoDB? (s/n): ").lower() == 's'
         if import_mongo:
             try:
-                uri = "mongodb://admin:password123@localhost:27017/?authSource=admin"
-                db_name = "KddCovid19"
-                collection_name = "KddPuebla"
+                uri = os.getenv("MONGO_URI", "mongodb://admin:password123@localhost:27017/?authSource=admin")
+                db_name = os.getenv("MONGO_DB", "KddCovid19")
+                collection_name = os.getenv("MONGO_COLLECTION", "KddPuebla")
                 
                 print(f"Conectando a MongoDB ({db_name}.{collection_name})...")
                 client = MongoClient(uri)

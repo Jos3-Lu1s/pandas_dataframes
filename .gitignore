@@ -2,4 +2,5 @@
 venv/
 *.csv
 *.xlsx
+.env
 *.gz
