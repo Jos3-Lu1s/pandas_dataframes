@@ -2,6 +2,7 @@ import pandas as pd
 from pathlib import Path
 from pymongo import MongoClient
 import os
+from sqlalchemy import create_engine
 from dotenv import load_dotenv
 
 # Cargar variables de entorno
@@ -182,43 +183,88 @@ def unificar_csvs():
         print(f"\nÉxito: Archivo CSV guardado en {output_file}")
         print(f"Total de filas: {len(df_final)}")
 
-        # Opción para importar a MongoDB
-        print("\n--- Importación a MongoDB ---")
-        import_mongo = input("¿Desea importar los datos directamente a MongoDB? (s/n): ").lower() == 's'
-        if import_mongo:
-            try:
-                uri = os.getenv("MONGO_URI", "mongodb://admin:password123@localhost:27017/?authSource=admin")
-                db_name = os.getenv("MONGO_DB", "KddCovid19")
-                collection_name = os.getenv("MONGO_COLLECTION", "KddPuebla")
-                
-                print(f"Conectando a MongoDB ({db_name}.{collection_name})...")
-                client = MongoClient(uri)
-                db = client[db_name]
-                collection = db[collection_name]
-                
-                # Limpiar la colección antes de importar (opcional, podrías comentar esto)
-                if input("¿Desea vaciar la colección antes de la importación? (s/n): ").lower() == 's':
-                    collection.delete_many({})
-                    print("Colección vaciada.")
+        # Opción para importar a Base de Datos
+        print("\n--- Importación a Base de Datos ---")
+        import_db = input("¿Desea importar los datos procesados a una Base de Datos? (s/n): ").lower() == 's'
+        if import_db:
+            print("\nSeleccione el motor de base de datos:")
+            print("1. MongoDB")
+            print("2. PostgreSQL")
+            opcion = input("Ingrese su opción (1 o 2): ").strip()
 
-                # Preparar datos: Pandas NaT/NaN deben ser None para MongoDB
-                # Convertimos a object para que permita None en lugar de NaT
-                print("Preparando datos para MongoDB (esto puede tomar un momento)...")
-                df_temp = df_final.astype(object).where(pd.notnull(df_final), None)
-                records = df_temp.to_dict('records')
-                
-                print(f"Insertando {len(records)} registros...")
-                # Insertar en bloques para mayor seguridad con datasets grandes
-                batch_size = 50000
-                for i in range(0, len(records), batch_size):
-                    batch = records[i:i + batch_size]
-                    collection.insert_many(batch)
-                    print(f"  Progreso: {min(i + batch_size, len(records))}/{len(records)}")
-                
-                print("¡Importación a MongoDB completada con éxito!")
-                client.close()
-            except Exception as e:
-                print(f"Error al importar a MongoDB: {e}")
+            if opcion == '1':
+                try:
+                    uri = os.getenv("MONGO_URI", "mongodb://admin:password123@localhost:27017/?authSource=admin")
+                    db_name = os.getenv("MONGO_DB", "KddCovid19")
+                    collection_name = os.getenv("MONGO_COLLECTION", "KddPuebla")
+                    
+                    print(f"Conectando a MongoDB ({db_name}.{collection_name})...")
+                    client = MongoClient(uri)
+                    db = client[db_name]
+                    collection = db[collection_name]
+                    
+                    if input("¿Desea vaciar la colección antes de la importación? (s/n): ").lower() == 's':
+                        collection.delete_many({})
+                        print("Colección vaciada.")
+
+                    print("Preparando datos para MongoDB (esto puede tomar un momento)...")
+                    df_temp = df_final.astype(object).where(pd.notnull(df_final), None)
+                    records = df_temp.to_dict('records')
+                    
+                    print(f"Insertando {len(records)} registros...")
+                    batch_size = 50000
+                    for i in range(0, len(records), batch_size):
+                        batch = records[i:i + batch_size]
+                        collection.insert_many(batch)
+                        print(f"  Progreso: {min(i + batch_size, len(records))}/{len(records)}")
+                    
+                    print("¡Importación a MongoDB completada con éxito!")
+                    client.close()
+                except Exception as e:
+                    print(f"Error al importar a MongoDB: {e}")
+
+            elif opcion == '2':
+                try:
+                    pg_uri = os.getenv("POSTGRES_URI", "postgresql://admin:password123@localhost:6432/KddCovid19")
+                    pg_table = os.getenv("POSTGRES_TABLE", "KddPuebla")
+                    
+                    print(f"Conectando a PostgreSQL ({pg_table})...")
+                    engine = create_engine(pg_uri)
+                    
+                    if_exists_option = 'replace' if input("¿Desea reemplazar los datos existentes en la tabla? (s/n): ").lower() == 's' else 'append'
+                    
+                    print(f"Importando datos a PostgreSQL (modo: {if_exists_option})...")
+                    
+                    # Limpiar posibles caracteres problemáticos y manejar tipos de datos
+                    print("Verificando consistencia de datos para PostgreSQL...")
+                    
+                    # Copia profunda para no afectar el df original si se vuelve a usar
+                    df_pg = df_final.copy()
+                    
+                    # Seleccionamos columnas que son strings (object o string de pandas 3.0+)
+                    text_cols = df_pg.select_dtypes(include=['object', 'string']).columns
+                    
+                    for col in text_cols:
+                        # Convertimos a string, aseguramos UTF-8 y manejamos nulos
+                        df_pg[col] = df_pg[col].apply(
+                            lambda x: str(x).encode('utf-8', 'ignore').decode('utf-8') if pd.notnull(x) else None
+                        )
+
+                    # Importación usando un contexto de conexión para asegurar cierre y rollback si falla
+                    with engine.begin() as connection:
+                        df_pg.to_sql(
+                            pg_table, 
+                            connection, 
+                            if_exists=if_exists_option, 
+                            index=False, 
+                            chunksize=10000
+                        )
+                    
+                    print("¡Importación a PostgreSQL completada con éxito!")
+                except Exception as e:
+                    print(f"Error al importar a PostgreSQL: {e}")
+            else:
+                print("Opción no válida.")
     else:
         print("No se pudo procesar ningún archivo o no hubo coincidencias con el filtro.")
 

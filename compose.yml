@@ -12,5 +12,19 @@ services:
       - mongo_data:/data/db
       - ./imports:/imports
 
+  postgres:
+    image: postgres:17
+    container_name: postgres
+    restart: always
+    ports:
+      - "6432:5432"
+    environment:
+      POSTGRES_DB: KddCovid19
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password123
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
 volumes:
   mongo_data:
+  postgres_data:
