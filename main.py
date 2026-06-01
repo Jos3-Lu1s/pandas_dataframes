@@ -50,9 +50,11 @@ def unificar_csvs():
     apply_filter = input("¿Desea filtrar los datos por entidad? (s/n): ").lower() == 's'
     
     entidad = None
+    include_um = False
     if apply_filter:
         try:
             entidad = int(input("Ingrese el número de la entidad a filtrar (ej. 21): "))
+            include_um = input("¿Desea incluir también los registros donde ENTIDAD_UM coincida? (s/n): ").lower() == 's'
             filtered_dir = Path("data/filtered")
             output_file = filtered_dir / f"datos_filtrados_entidad_{entidad}.csv"
             output_dir = filtered_dir
@@ -100,7 +102,10 @@ def unificar_csvs():
             
             if apply_filter:
                 # Filtrar por ENTIDAD_RES o ENTIDAD_NAC
-                df = df[(df["ENTIDAD_RES"] == entidad) | (df["ENTIDAD_NAC"] == entidad)]
+                if include_um and "ENTIDAD_UM" in df.columns:
+                    df = df[(df["ENTIDAD_RES"] == entidad) | (df["ENTIDAD_NAC"] == entidad) | (df["ENTIDAD_UM"] == entidad)]
+                else:
+                    df = df[(df["ENTIDAD_RES"] == entidad) | (df["ENTIDAD_NAC"] == entidad)]
             
             # Reparar codificación de PAIS_NACIONALIDAD si existe
             if "PAIS_NACIONALIDAD" in df.columns:
