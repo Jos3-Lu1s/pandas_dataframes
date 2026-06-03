@@ -184,6 +184,82 @@ def unificar_csvs():
             else:
                 print("No se encontraron columnas de fecha.")
 
+        # Generación de Campos Calculados
+        print("\n--- Generación de Campos Calculados ---")
+
+        # Bucle para agregar campos personalizados
+        while True:
+            add_more = input("\n¿Desea agregar un campo basado en alguna operación? (s/n): ").lower() == 's'
+            if not add_more:
+                break
+            
+            new_col_name = input("Ingrese el nombre del nuevo campo: ").strip()
+            if not new_col_name:
+                print("El nombre del campo no puede estar vacío.")
+                continue
+            
+            if new_col_name in df_final.columns:
+                overwrite = input(f"El campo '{new_col_name}' ya existe. ¿Desea sobrescribirlo? (s/n): ").lower() == 's'
+                if not overwrite:
+                    continue
+
+            print("Columnas disponibles:", list(df_final.columns))
+            col1 = input("Ingrese el nombre del primer campo (columna A): ").strip()
+            if col1 not in df_final.columns:
+                print(f"La columna '{col1}' no existe.")
+                continue
+                
+            col2 = input("Ingrese el nombre del segundo campo (columna B): ").strip()
+            if col2 not in df_final.columns:
+                print(f"La columna '{col2}' no existe.")
+                continue
+                
+            print("Operaciones disponibles: suma, resta, multiplicacion, division")
+            op = input("Ingrese la operación a realizar (o +, -, *, /): ").strip().lower()
+            
+            try:
+                is_col1_date = pd.api.types.is_datetime64_any_dtype(df_final[col1]) or 'FECHA' in col1.upper()
+                is_col2_date = pd.api.types.is_datetime64_any_dtype(df_final[col2]) or 'FECHA' in col2.upper()
+                
+                if op in ['suma', '+']:
+                    if is_col1_date and not is_col2_date:
+                        d1 = pd.to_datetime(df_final[col1], errors='coerce')
+                        d2 = pd.to_numeric(df_final[col2], errors='coerce')
+                        df_final[new_col_name] = d1 + pd.to_timedelta(d2, unit='D')
+                    elif not is_col1_date and is_col2_date:
+                        d1 = pd.to_numeric(df_final[col1], errors='coerce')
+                        d2 = pd.to_datetime(df_final[col2], errors='coerce')
+                        df_final[new_col_name] = d2 + pd.to_timedelta(d1, unit='D')
+                    else:
+                        df_final[new_col_name] = pd.to_numeric(df_final[col1], errors='coerce') + pd.to_numeric(df_final[col2], errors='coerce')
+                    print(f"Campo '{new_col_name}' calculado y agregado con éxito.")
+                    
+                elif op in ['resta', '-']:
+                    if is_col1_date and is_col2_date:
+                        d1 = pd.to_datetime(df_final[col1], errors='coerce')
+                        d2 = pd.to_datetime(df_final[col2], errors='coerce')
+                        df_final[new_col_name] = (d1 - d2).dt.days
+                    elif is_col1_date and not is_col2_date:
+                        d1 = pd.to_datetime(df_final[col1], errors='coerce')
+                        d2 = pd.to_numeric(df_final[col2], errors='coerce')
+                        df_final[new_col_name] = d1 - pd.to_timedelta(d2, unit='D')
+                    else:
+                        df_final[new_col_name] = pd.to_numeric(df_final[col1], errors='coerce') - pd.to_numeric(df_final[col2], errors='coerce')
+                    print(f"Campo '{new_col_name}' calculado y agregado con éxito.")
+                    
+                elif op in ['multiplicacion', 'multiplicación', '*']:
+                    df_final[new_col_name] = pd.to_numeric(df_final[col1], errors='coerce') * pd.to_numeric(df_final[col2], errors='coerce')
+                    print(f"Campo '{new_col_name}' calculado y agregado con éxito.")
+                    
+                elif op in ['division', 'división', '/']:
+                    df_final[new_col_name] = pd.to_numeric(df_final[col1], errors='coerce') / pd.to_numeric(df_final[col2], errors='coerce')
+                    print(f"Campo '{new_col_name}' calculado y agregado con éxito.")
+                    
+                else:
+                    print("Operación no reconocida. Intente de nuevo.")
+            except Exception as e:
+                print(f"Error al realizar la operación: {e}")
+
         # Opción para aplicar catálogos
         print("\n--- Aplicación de Catálogos ---")
         apply_cats = input("¿Desea aplicar los catálogos para reemplazar claves por descripciones? (s/n): ").lower() == 's'
