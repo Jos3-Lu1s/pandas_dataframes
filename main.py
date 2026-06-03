@@ -2,6 +2,7 @@ import pandas as pd
 from pathlib import Path
 from pymongo import MongoClient
 import os
+import json
 from sqlalchemy import create_engine
 from dotenv import load_dotenv
 
@@ -182,6 +183,44 @@ def unificar_csvs():
                 print("Conversión completada. Los valores como '9999-99-99' ahora son nulos.")
             else:
                 print("No se encontraron columnas de fecha.")
+
+        # Opción para aplicar catálogos
+        print("\n--- Aplicación de Catálogos ---")
+        apply_cats = input("¿Desea aplicar los catálogos para reemplazar claves por descripciones? (s/n): ").lower() == 's'
+        if apply_cats:
+            data_json_path = Path("data/docs/catalogos/Data.json")
+            if data_json_path.exists():
+                print(f"Cargando catálogos desde {data_json_path}...")
+                try:
+                    with open(data_json_path, 'r', encoding='utf-8') as f:
+                        catalogs = json.load(f)
+                    
+                    if not isinstance(catalogs, list):
+                        catalogs = [catalogs]
+                    
+                    for cat_data in catalogs:
+                        try:
+                            campo = cat_data.get("campo")
+                            if campo in df_final.columns:
+                                print(f"  Aplicando catálogo para el campo: {campo}...")
+                                # Crear diccionario de mapeo {clave: descripcion}
+                                # Soportamos claves tanto numéricas como texto por seguridad
+                                mapping = {}
+                                for item in cat_data["valores"]:
+                                    clave = item["clave"]
+                                    desc = item["descripcion"]
+                                    mapping[clave] = desc
+                                    # También agregar la versión string de la clave
+                                    if isinstance(clave, int):
+                                        mapping[str(clave)] = desc
+                                
+                                df_final[campo] = df_final[campo].replace(mapping)
+                        except Exception as e:
+                            print(f"  Error al aplicar catálogo para el campo {cat_data.get('campo', 'desconocido')}: {e}")
+                except Exception as e:
+                    print(f"Error al procesar el archivo {data_json_path}: {e}")
+            else:
+                print(f"No se encontró el archivo de catálogos en {data_json_path}.")
 
         # Guardar en CSV
         df_final.to_csv(output_file, index=False, encoding="utf-8-sig")

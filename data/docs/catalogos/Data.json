@@ -1,0 +1,1910 @@
+[
+    {
+        "campo": "TIPO_PACIENTE",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "AMBULATORIO"
+            },
+            {
+                "clave": 2,
+                "descripcion": "HOSPITALIZADO"
+            },
+            {
+                "clave": 99,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    },
+    {
+        "campo": "SEXO",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "MUJER"
+            },
+            {
+                "clave": 2,
+                "descripcion": "HOMBRE"
+            },
+            {
+                "clave": 99,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    },
+    {
+        "campo": "SECTOR",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "CRUZ ROJA"
+            },
+            {
+                "clave": 2,
+                "descripcion": "DIF"
+            },
+            {
+                "clave": 3,
+                "descripcion": "ESTATAL"
+            },
+            {
+                "clave": 4,
+                "descripcion": "IMSS"
+            },
+            {
+                "clave": 5,
+                "descripcion": "IMSS-BIENESTAR"
+            },
+            {
+                "clave": 6,
+                "descripcion": "ISSSTE"
+            },
+            {
+                "clave": 7,
+                "descripcion": "MUNICIPAL"
+            },
+            {
+                "clave": 8,
+                "descripcion": "PEMEX"
+            },
+            {
+                "clave": 9,
+                "descripcion": "PRIVADA"
+            },
+            {
+                "clave": 10,
+                "descripcion": "SEDENA"
+            },
+            {
+                "clave": 11,
+                "descripcion": "SEMAR"
+            },
+            {
+                "clave": 12,
+                "descripcion": "SSA"
+            },
+            {
+                "clave": 13,
+                "descripcion": "UNIVERSITARIO"
+            },
+            {
+                "clave": 14,
+                "descripcion": "CIJ"
+            },
+            {
+                "clave": 15,
+                "descripcion": "IMSS Bienestar OPD"
+            },
+            {
+                "clave": 99,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    },
+    {
+        "campo": "RESULTADO_PCR",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "INFLUENZA AH1N1 PMD"
+            },
+            {
+                "clave": 2,
+                "descripcion": "INFLUENZA A H1"
+            },
+            {
+                "clave": 3,
+                "descripcion": "INFLUENZA A H3"
+            },
+            {
+                "clave": 4,
+                "descripcion": "INFLUENZA B"
+            },
+            {
+                "clave": 5,
+                "descripcion": "NEGATIVO"
+            },
+            {
+                "clave": 6,
+                "descripcion": "MUESTRA NO ADECUADA"
+            },
+            {
+                "clave": 7,
+                "descripcion": "ADENOVIRUS"
+            },
+            {
+                "clave": 8,
+                "descripcion": "PARAINFLUENZA 1"
+            },
+            {
+                "clave": 9,
+                "descripcion": "PARAINFLUENZA 2"
+            },
+            {
+                "clave": 10,
+                "descripcion": "PARAINFLUENZA 3"
+            },
+            {
+                "clave": 11,
+                "descripcion": "VIRUS SINCICIAL RESPIRATORIO"
+            },
+            {
+                "clave": 13,
+                "descripcion": "INFLUENZA A NO SUBTIPIFICADA"
+            },
+            {
+                "clave": 14,
+                "descripcion": "INFLUENZA A H5"
+            },
+            {
+                "clave": 17,
+                "descripcion": "MUESTRA RECHAZADA"
+            },
+            {
+                "clave": 20,
+                "descripcion": "VIRUS SINCICIAL RESPIRATORIO A"
+            },
+            {
+                "clave": 21,
+                "descripcion": "VIRUS SINCICIAL RESPIRATORIO B"
+            },
+            {
+                "clave": 22,
+                "descripcion": "CORONA 229E"
+            },
+            {
+                "clave": 23,
+                "descripcion": "CORONA OC43"
+            },
+            {
+                "clave": 24,
+                "descripcion": "CORONA SARS"
+            },
+            {
+                "clave": 25,
+                "descripcion": "CORONA NL63"
+            },
+            {
+                "clave": 26,
+                "descripcion": "CORONA HKU1"
+            },
+            {
+                "clave": 27,
+                "descripcion": "MUESTRA QUE NO AMPLIFICO"
+            },
+            {
+                "clave": 28,
+                "descripcion": "ENTEROV//RHINOVIRUS"
+            },
+            {
+                "clave": 29,
+                "descripcion": "METAPNEUMOVIRUS"
+            },
+            {
+                "clave": 30,
+                "descripcion": "MUESTRA SIN AISLAMIENTO"
+            },
+            {
+                "clave": 32,
+                "descripcion": "PARAINFLUENZA 4"
+            },
+            {
+                "clave": 33,
+                "descripcion": "MUESTRA SIN CELULAS"
+            },
+            {
+                "clave": 34,
+                "descripcion": "SARS-CoV-2"
+            },
+            {
+                "clave": 35,
+                "descripcion": "MERS-CoV"
+            },
+            {
+                "clave": 36,
+                "descripcion": "SARS-CoV"
+            },
+            {
+                "clave": 37,
+                "descripcion": "BOCAVIRUS"
+            },
+            {
+                "clave": 41,
+                "descripcion": "MUESTRA NO RECIBIDA"
+            },
+            {
+                "clave": 997,
+                "descripcion": "NO APLICA (CASO SIN MUESTRA)"
+            },
+            {
+                "clave": 998,
+                "descripcion": "SIN COINFECCIÓN"
+            },
+            {
+                "clave": 999,
+                "descripcion": "PENDIENTE"
+            }
+        ]
+    },
+    {
+        "campo": "RESULTADO_LAB",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "POSITIVO A SARS-COV-2"
+            },
+            {
+                "clave": 2,
+                "descripcion": "NO POSITIVO A SARS-COV-2"
+            },
+            {
+                "clave": 3,
+                "descripcion": "RESULTADO PENDIENTE"
+            },
+            {
+                "clave": 4,
+                "descripcion": "RESULTADO NO ADECUADO"
+            },
+            {
+                "clave": 97,
+                "descripcion": "NO APLICA (CASO SIN MUESTRA)"
+            }
+        ]
+    },
+    {
+        "campo": "RESULTADO_ANTIGENO",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "POSITIVO A SARS-COV-2"
+            },
+            {
+                "clave": 2,
+                "descripcion": "NEGATIVO A SARS-COV-2"
+            },
+            {
+                "clave": 97,
+                "descripcion": "NO APLICA (CASO SIN MUESTRA)"
+            }
+        ]
+    },
+    {
+        "campo": "ORIGEN",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "USMER"
+            },
+            {
+                "clave": 2,
+                "descripcion": "FUERA DE USMER"
+            },
+            {
+                "clave": 99,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    },
+    {
+        "campo": "NACIONALIDAD",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "MEXICANA"
+            },
+            {
+                "clave": 2,
+                "descripcion": "EXTRANJERA"
+            },
+            {
+                "clave": 99,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    },
+    {
+        "campo": "MUNICIPIO_RES",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "ACAJETE"
+            },
+            {
+                "clave": 2,
+                "descripcion": "ACATENO"
+            },
+            {
+                "clave": 3,
+                "descripcion": "ACATLÁN"
+            },
+            {
+                "clave": 4,
+                "descripcion": "ACATZINGO"
+            },
+            {
+                "clave": 5,
+                "descripcion": "ACTEOPAN"
+            },
+            {
+                "clave": 6,
+                "descripcion": "AHUACATLÁN"
+            },
+            {
+                "clave": 7,
+                "descripcion": "AHUATLÁN"
+            },
+            {
+                "clave": 8,
+                "descripcion": "AHUAZOTEPEC"
+            },
+            {
+                "clave": 9,
+                "descripcion": "AHUEHUETITLA"
+            },
+            {
+                "clave": 10,
+                "descripcion": "AJALPAN"
+            },
+            {
+                "clave": 11,
+                "descripcion": "ALBINO ZERTUCHE"
+            },
+            {
+                "clave": 12,
+                "descripcion": "ALJOJUCA"
+            },
+            {
+                "clave": 13,
+                "descripcion": "ALTEPEXI"
+            },
+            {
+                "clave": 14,
+                "descripcion": "AMIXTLÁN"
+            },
+            {
+                "clave": 15,
+                "descripcion": "AMOZOC"
+            },
+            {
+                "clave": 16,
+                "descripcion": "AQUIXTLA"
+            },
+            {
+                "clave": 17,
+                "descripcion": "ATEMPAN"
+            },
+            {
+                "clave": 18,
+                "descripcion": "ATEXCAL"
+            },
+            {
+                "clave": 19,
+                "descripcion": "ATLIXCO"
+            },
+            {
+                "clave": 20,
+                "descripcion": "ATOYATEMPAN"
+            },
+            {
+                "clave": 21,
+                "descripcion": "ATZALA"
+            },
+            {
+                "clave": 22,
+                "descripcion": "ATZITZIHUACÁN"
+            },
+            {
+                "clave": 23,
+                "descripcion": "ATZITZINTLA"
+            },
+            {
+                "clave": 24,
+                "descripcion": "AXUTLA"
+            },
+            {
+                "clave": 25,
+                "descripcion": "AYOTOXCO DE GUERRERO"
+            },
+            {
+                "clave": 26,
+                "descripcion": "CALPAN"
+            },
+            {
+                "clave": 27,
+                "descripcion": "CALTEPEC"
+            },
+            {
+                "clave": 28,
+                "descripcion": "CAMOCUAUTLA"
+            },
+            {
+                "clave": 29,
+                "descripcion": "CAXHUACAN"
+            },
+            {
+                "clave": 30,
+                "descripcion": "COATEPEC"
+            },
+            {
+                "clave": 31,
+                "descripcion": "COATZINGO"
+            },
+            {
+                "clave": 32,
+                "descripcion": "COHETZALA"
+            },
+            {
+                "clave": 33,
+                "descripcion": "COHUECAN"
+            },
+            {
+                "clave": 34,
+                "descripcion": "CORONANGO"
+            },
+            {
+                "clave": 35,
+                "descripcion": "COXCATLÁN"
+            },
+            {
+                "clave": 36,
+                "descripcion": "COYOMEAPAN"
+            },
+            {
+                "clave": 37,
+                "descripcion": "COYOTEPEC"
+            },
+            {
+                "clave": 38,
+                "descripcion": "CUAPIAXTLA DE MADERO"
+            },
+            {
+                "clave": 39,
+                "descripcion": "CUAUTEMPAN"
+            },
+            {
+                "clave": 40,
+                "descripcion": "CUAUTINCHÁN"
+            },
+            {
+                "clave": 41,
+                "descripcion": "CUAUTLANCINGO"
+            },
+            {
+                "clave": 42,
+                "descripcion": "CUAYUCA DE ANDRADE"
+            },
+            {
+                "clave": 43,
+                "descripcion": "CUETZALAN DEL PROGRESO"
+            },
+            {
+                "clave": 44,
+                "descripcion": "CUYOACO"
+            },
+            {
+                "clave": 45,
+                "descripcion": "CHALCHICOMULA DE SESMA"
+            },
+            {
+                "clave": 46,
+                "descripcion": "CHAPULCO"
+            },
+            {
+                "clave": 47,
+                "descripcion": "CHIAUTLA"
+            },
+            {
+                "clave": 48,
+                "descripcion": "CHIAUTZINGO"
+            },
+            {
+                "clave": 49,
+                "descripcion": "CHICONCUAUTLA"
+            },
+            {
+                "clave": 50,
+                "descripcion": "CHICHIQUILA"
+            },
+            {
+                "clave": 51,
+                "descripcion": "CHIETLA"
+            },
+            {
+                "clave": 52,
+                "descripcion": "CHIGMECATITLÁN"
+            },
+            {
+                "clave": 53,
+                "descripcion": "CHIGNAHUAPAN"
+            },
+            {
+                "clave": 54,
+                "descripcion": "CHIGNAUTLA"
+            },
+            {
+                "clave": 55,
+                "descripcion": "CHILA"
+            },
+            {
+                "clave": 56,
+                "descripcion": "CHILA DE LA SAL"
+            },
+            {
+                "clave": 57,
+                "descripcion": "HONEY"
+            },
+            {
+                "clave": 58,
+                "descripcion": "CHILCHOTLA"
+            },
+            {
+                "clave": 59,
+                "descripcion": "CHINANTLA"
+            },
+            {
+                "clave": 60,
+                "descripcion": "DOMINGO ARENAS"
+            },
+            {
+                "clave": 61,
+                "descripcion": "ELOXOCHITLÁN"
+            },
+            {
+                "clave": 62,
+                "descripcion": "EPATLÁN"
+            },
+            {
+                "clave": 63,
+                "descripcion": "ESPERANZA"
+            },
+            {
+                "clave": 64,
+                "descripcion": "FRANCISCO Z. MENA"
+            },
+            {
+                "clave": 65,
+                "descripcion": "GENERAL FELIPE ÁNGELES"
+            },
+            {
+                "clave": 66,
+                "descripcion": "GUADALUPE"
+            },
+            {
+                "clave": 67,
+                "descripcion": "GUADALUPE VICTORIA"
+            },
+            {
+                "clave": 68,
+                "descripcion": "HERMENEGILDO GALEANA"
+            },
+            {
+                "clave": 69,
+                "descripcion": "HUAQUECHULA"
+            },
+            {
+                "clave": 70,
+                "descripcion": "HUATLATLAUCA"
+            },
+            {
+                "clave": 71,
+                "descripcion": "HUAUCHINANGO"
+            },
+            {
+                "clave": 72,
+                "descripcion": "HUEHUETLA"
+            },
+            {
+                "clave": 73,
+                "descripcion": "HUEHUETLÁN EL CHICO"
+            },
+            {
+                "clave": 74,
+                "descripcion": "HUEJOTZINGO"
+            },
+            {
+                "clave": 75,
+                "descripcion": "HUEYAPAN"
+            },
+            {
+                "clave": 76,
+                "descripcion": "HUEYTAMALCO"
+            },
+            {
+                "clave": 77,
+                "descripcion": "HUEYTLALPAN"
+            },
+            {
+                "clave": 78,
+                "descripcion": "HUITZILAN DE SERDÁN"
+            },
+            {
+                "clave": 79,
+                "descripcion": "HUITZILTEPEC"
+            },
+            {
+                "clave": 80,
+                "descripcion": "ATLEQUIZAYAN"
+            },
+            {
+                "clave": 81,
+                "descripcion": "IXCAMILPA DE GUERRERO"
+            },
+            {
+                "clave": 82,
+                "descripcion": "IXCAQUIXTLA"
+            },
+            {
+                "clave": 83,
+                "descripcion": "IXTACAMAXTITLÁN"
+            },
+            {
+                "clave": 84,
+                "descripcion": "IXTEPEC"
+            },
+            {
+                "clave": 85,
+                "descripcion": "IZÚCAR DE MATAMOROS"
+            },
+            {
+                "clave": 86,
+                "descripcion": "JALPAN"
+            },
+            {
+                "clave": 87,
+                "descripcion": "JOLALPAN"
+            },
+            {
+                "clave": 88,
+                "descripcion": "JONOTLA"
+            },
+            {
+                "clave": 89,
+                "descripcion": "JOPALA"
+            },
+            {
+                "clave": 90,
+                "descripcion": "JUAN C. BONILLA"
+            },
+            {
+                "clave": 91,
+                "descripcion": "JUAN GALINDO"
+            },
+            {
+                "clave": 92,
+                "descripcion": "JUAN N. MÉNDEZ"
+            },
+            {
+                "clave": 93,
+                "descripcion": "LAFRAGUA"
+            },
+            {
+                "clave": 94,
+                "descripcion": "LIBRES"
+            },
+            {
+                "clave": 95,
+                "descripcion": "LA MAGDALENA TLATLAUQUITEPEC"
+            },
+            {
+                "clave": 96,
+                "descripcion": "MAZAPILTEPEC DE JUÁREZ"
+            },
+            {
+                "clave": 97,
+                "descripcion": "MIXTLA"
+            },
+            {
+                "clave": 98,
+                "descripcion": "MOLCAXAC"
+            },
+            {
+                "clave": 99,
+                "descripcion": "CAÑADA MORELOS"
+            },
+            {
+                "clave": 100,
+                "descripcion": "NAUPAN"
+            },
+            {
+                "clave": 101,
+                "descripcion": "NAUZONTLA"
+            },
+            {
+                "clave": 102,
+                "descripcion": "NEALTICAN"
+            },
+            {
+                "clave": 103,
+                "descripcion": "NICOLÁS BRAVO"
+            },
+            {
+                "clave": 104,
+                "descripcion": "NOPALUCAN"
+            },
+            {
+                "clave": 105,
+                "descripcion": "OCOTEPEC"
+            },
+            {
+                "clave": 106,
+                "descripcion": "OCOYUCAN"
+            },
+            {
+                "clave": 107,
+                "descripcion": "OLINTLA"
+            },
+            {
+                "clave": 108,
+                "descripcion": "ORIENTAL"
+            },
+            {
+                "clave": 109,
+                "descripcion": "PAHUATLÁN"
+            },
+            {
+                "clave": 110,
+                "descripcion": "PALMAR DE BRAVO"
+            },
+            {
+                "clave": 111,
+                "descripcion": "PANTEPEC"
+            },
+            {
+                "clave": 112,
+                "descripcion": "PETLALCINGO"
+            },
+            {
+                "clave": 113,
+                "descripcion": "PIAXTLA"
+            },
+            {
+                "clave": 114,
+                "descripcion": "PUEBLA"
+            },
+            {
+                "clave": 115,
+                "descripcion": "QUECHOLAC"
+            },
+            {
+                "clave": 116,
+                "descripcion": "QUIMIXTLÁN"
+            },
+            {
+                "clave": 117,
+                "descripcion": "RAFAEL LARA GRAJALES"
+            },
+            {
+                "clave": 118,
+                "descripcion": "LOS REYES DE JUÁREZ"
+            },
+            {
+                "clave": 119,
+                "descripcion": "SAN ANDRÉS CHOLULA"
+            },
+            {
+                "clave": 120,
+                "descripcion": "SAN ANTONIO CAÑADA"
+            },
+            {
+                "clave": 121,
+                "descripcion": "SAN DIEGO LA MESA TOCHIMILTZINGO"
+            },
+            {
+                "clave": 122,
+                "descripcion": "SAN FELIPE TEOTLALCINGO"
+            },
+            {
+                "clave": 123,
+                "descripcion": "SAN FELIPE TEPATLÁN"
+            },
+            {
+                "clave": 124,
+                "descripcion": "SAN GABRIEL CHILAC"
+            },
+            {
+                "clave": 125,
+                "descripcion": "SAN GREGORIO ATZOMPA"
+            },
+            {
+                "clave": 126,
+                "descripcion": "SAN JERÓNIMO TECUANIPAN"
+            },
+            {
+                "clave": 127,
+                "descripcion": "SAN JERÓNIMO XAYACATLÁN"
+            },
+            {
+                "clave": 128,
+                "descripcion": "SAN JOSÉ CHIAPA"
+            },
+            {
+                "clave": 129,
+                "descripcion": "SAN JOSÉ MIAHUATLÁN"
+            },
+            {
+                "clave": 130,
+                "descripcion": "SAN JUAN ATENCO"
+            },
+            {
+                "clave": 131,
+                "descripcion": "SAN JUAN ATZOMPA"
+            },
+            {
+                "clave": 132,
+                "descripcion": "SAN MARTÍN TEXMELUCAN"
+            },
+            {
+                "clave": 133,
+                "descripcion": "SAN MARTÍN TOTOLTEPEC"
+            },
+            {
+                "clave": 134,
+                "descripcion": "SAN MATÍAS TLALANCALECA"
+            },
+            {
+                "clave": 135,
+                "descripcion": "SAN MIGUEL IXITLÁN"
+            },
+            {
+                "clave": 136,
+                "descripcion": "SAN MIGUEL XOXTLA"
+            },
+            {
+                "clave": 137,
+                "descripcion": "SAN NICOLÁS BUENOS AIRES"
+            },
+            {
+                "clave": 138,
+                "descripcion": "SAN NICOLÁS DE LOS RANCHOS"
+            },
+            {
+                "clave": 139,
+                "descripcion": "SAN PABLO ANICANO"
+            },
+            {
+                "clave": 140,
+                "descripcion": "SAN PEDRO CHOLULA"
+            },
+            {
+                "clave": 141,
+                "descripcion": "SAN PEDRO YELOIXTLAHUACA"
+            },
+            {
+                "clave": 142,
+                "descripcion": "SAN SALVADOR EL SECO"
+            },
+            {
+                "clave": 143,
+                "descripcion": "SAN SALVADOR EL VERDE"
+            },
+            {
+                "clave": 144,
+                "descripcion": "SAN SALVADOR HUIXCOLOTLA"
+            },
+            {
+                "clave": 145,
+                "descripcion": "SAN SEBASTIÁN TLACOTEPEC"
+            },
+            {
+                "clave": 146,
+                "descripcion": "SANTA CATARINA TLALTEMPAN"
+            },
+            {
+                "clave": 147,
+                "descripcion": "SANTA INÉS AHUATEMPAN"
+            },
+            {
+                "clave": 148,
+                "descripcion": "SANTA ISABEL CHOLULA"
+            },
+            {
+                "clave": 149,
+                "descripcion": "SANTIAGO MIAHUATLÁN"
+            },
+            {
+                "clave": 150,
+                "descripcion": "HUEHUETLÁN EL GRANDE"
+            },
+            {
+                "clave": 151,
+                "descripcion": "SANTO TOMÁS HUEYOTLIPAN"
+            },
+            {
+                "clave": 152,
+                "descripcion": "SOLTEPEC"
+            },
+            {
+                "clave": 153,
+                "descripcion": "TECALI DE HERRERA"
+            },
+            {
+                "clave": 154,
+                "descripcion": "TECAMACHALCO"
+            },
+            {
+                "clave": 155,
+                "descripcion": "TECOMATLÁN"
+            },
+            {
+                "clave": 156,
+                "descripcion": "TEHUACÁN"
+            },
+            {
+                "clave": 157,
+                "descripcion": "TEHUITZINGO"
+            },
+            {
+                "clave": 158,
+                "descripcion": "TENAMPULCO"
+            },
+            {
+                "clave": 159,
+                "descripcion": "TEOPANTLÁN"
+            },
+            {
+                "clave": 160,
+                "descripcion": "TEOTLALCO"
+            },
+            {
+                "clave": 161,
+                "descripcion": "TEPANCO DE LÓPEZ"
+            },
+            {
+                "clave": 162,
+                "descripcion": "TEPANGO DE RODRÍGUEZ"
+            },
+            {
+                "clave": 163,
+                "descripcion": "TEPATLAXCO DE HIDALGO"
+            },
+            {
+                "clave": 164,
+                "descripcion": "TEPEACA"
+            },
+            {
+                "clave": 165,
+                "descripcion": "TEPEMAXALCO"
+            },
+            {
+                "clave": 166,
+                "descripcion": "TEPEOJUMA"
+            },
+            {
+                "clave": 167,
+                "descripcion": "TEPETZINTLA"
+            },
+            {
+                "clave": 168,
+                "descripcion": "TEPEXCO"
+            },
+            {
+                "clave": 169,
+                "descripcion": "TEPEXI DE RODRÍGUEZ"
+            },
+            {
+                "clave": 170,
+                "descripcion": "TEPEYAHUALCO"
+            },
+            {
+                "clave": 171,
+                "descripcion": "TEPEYAHUALCO DE CUAUHTÉMOC"
+            },
+            {
+                "clave": 172,
+                "descripcion": "TETELA DE OCAMPO"
+            },
+            {
+                "clave": 173,
+                "descripcion": "TETELES DE AVILA CASTILLO"
+            },
+            {
+                "clave": 174,
+                "descripcion": "TEZIUTLÁN"
+            },
+            {
+                "clave": 175,
+                "descripcion": "TIANGUISMANALCO"
+            },
+            {
+                "clave": 176,
+                "descripcion": "TILAPA"
+            },
+            {
+                "clave": 177,
+                "descripcion": "TLACOTEPEC DE BENITO JUÁREZ"
+            },
+            {
+                "clave": 178,
+                "descripcion": "TLACUILOTEPEC"
+            },
+            {
+                "clave": 179,
+                "descripcion": "TLACHICHUCA"
+            },
+            {
+                "clave": 180,
+                "descripcion": "TLAHUAPAN"
+            },
+            {
+                "clave": 181,
+                "descripcion": "TLALTENANGO"
+            },
+            {
+                "clave": 182,
+                "descripcion": "TLANEPANTLA"
+            },
+            {
+                "clave": 183,
+                "descripcion": "TLAOLA"
+            },
+            {
+                "clave": 184,
+                "descripcion": "TLAPACOYA"
+            },
+            {
+                "clave": 185,
+                "descripcion": "TLAPANALÁ"
+            },
+            {
+                "clave": 186,
+                "descripcion": "TLATLAUQUITEPEC"
+            },
+            {
+                "clave": 187,
+                "descripcion": "TLAXCO"
+            },
+            {
+                "clave": 188,
+                "descripcion": "TOCHIMILCO"
+            },
+            {
+                "clave": 189,
+                "descripcion": "TOCHTEPEC"
+            },
+            {
+                "clave": 190,
+                "descripcion": "TOTOLTEPEC DE GUERRERO"
+            },
+            {
+                "clave": 191,
+                "descripcion": "TULCINGO"
+            },
+            {
+                "clave": 192,
+                "descripcion": "TUZAMAPAN DE GALEANA"
+            },
+            {
+                "clave": 193,
+                "descripcion": "TZICATLACOYAN"
+            },
+            {
+                "clave": 194,
+                "descripcion": "VENUSTIANO CARRANZA"
+            },
+            {
+                "clave": 195,
+                "descripcion": "VICENTE GUERRERO"
+            },
+            {
+                "clave": 196,
+                "descripcion": "XAYACATLÁN DE BRAVO"
+            },
+            {
+                "clave": 197,
+                "descripcion": "XICOTEPEC"
+            },
+            {
+                "clave": 198,
+                "descripcion": "XICOTLÁN"
+            },
+            {
+                "clave": 199,
+                "descripcion": "XIUTETELCO"
+            },
+            {
+                "clave": 200,
+                "descripcion": "XOCHIAPULCO"
+            },
+            {
+                "clave": 201,
+                "descripcion": "XOCHILTEPEC"
+            },
+            {
+                "clave": 202,
+                "descripcion": "XOCHITLÁN DE VICENTE SUÁREZ"
+            },
+            {
+                "clave": 203,
+                "descripcion": "XOCHITLÁN TODOS SANTOS"
+            },
+            {
+                "clave": 204,
+                "descripcion": "YAONÁHUAC"
+            },
+            {
+                "clave": 205,
+                "descripcion": "YEHUALTEPEC"
+            },
+            {
+                "clave": 206,
+                "descripcion": "ZACAPALA"
+            },
+            {
+                "clave": 207,
+                "descripcion": "ZACAPOAXTLA"
+            },
+            {
+                "clave": 208,
+                "descripcion": "ZACATLÁN"
+            },
+            {
+                "clave": 209,
+                "descripcion": "ZAPOTITLÁN"
+            },
+            {
+                "clave": 210,
+                "descripcion": "ZAPOTITLÁN DE MÉNDEZ"
+            },
+            {
+                "clave": 211,
+                "descripcion": "ZARAGOZA"
+            },
+            {
+                "clave": 212,
+                "descripcion": "ZAUTLA"
+            },
+            {
+                "clave": 213,
+                "descripcion": "ZIHUATEUTLA"
+            },
+            {
+                "clave": 214,
+                "descripcion": "ZINACATEPEC"
+            },
+            {
+                "clave": 215,
+                "descripcion": "ZONGOZOTLA"
+            },
+            {
+                "clave": 216,
+                "descripcion": "ZOQUIAPAN"
+            },
+            {
+                "clave": 217,
+                "descripcion": "ZOQUITLÁN"
+            },
+            {
+                "clave": 999,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    },
+    {
+        "campo": "ENTIDAD_UM",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "AGUASCALIENTES"
+            },
+            {
+                "clave": 2,
+                "descripcion": "BAJA CALIFORNIA"
+            },
+            {
+                "clave": 3,
+                "descripcion": "BAJA CALIFORNIA SUR"
+            },
+            {
+                "clave": 4,
+                "descripcion": "CAMPECHE"
+            },
+            {
+                "clave": 5,
+                "descripcion": "COAHUILA DE ZARAGOZA"
+            },
+            {
+                "clave": 6,
+                "descripcion": "COLIMA"
+            },
+            {
+                "clave": 7,
+                "descripcion": "CHIAPAS"
+            },
+            {
+                "clave": 8,
+                "descripcion": "CHIHUAHUA"
+            },
+            {
+                "clave": 9,
+                "descripcion": "CIUDAD DE MÉXICO"
+            },
+            {
+                "clave": 10,
+                "descripcion": "DURANGO"
+            },
+            {
+                "clave": 11,
+                "descripcion": "GUANAJUATO"
+            },
+            {
+                "clave": 12,
+                "descripcion": "GUERRERO"
+            },
+            {
+                "clave": 13,
+                "descripcion": "HIDALGO"
+            },
+            {
+                "clave": 14,
+                "descripcion": "JALISCO"
+            },
+            {
+                "clave": 15,
+                "descripcion": "MÉXICO"
+            },
+            {
+                "clave": 16,
+                "descripcion": "MICHOACÁN DE OCAMPO"
+            },
+            {
+                "clave": 17,
+                "descripcion": "MORELOS"
+            },
+            {
+                "clave": 18,
+                "descripcion": "NAYARIT"
+            },
+            {
+                "clave": 19,
+                "descripcion": "NUEVO LEÓN"
+            },
+            {
+                "clave": 20,
+                "descripcion": "OAXACA"
+            },
+            {
+                "clave": 21,
+                "descripcion": "PUEBLA"
+            },
+            {
+                "clave": 22,
+                "descripcion": "QUERÉTARO"
+            },
+            {
+                "clave": 23,
+                "descripcion": "QUINTANA ROO"
+            },
+            {
+                "clave": 24,
+                "descripcion": "SAN LUIS POTOSÍ"
+            },
+            {
+                "clave": 25,
+                "descripcion": "SINALOA"
+            },
+            {
+                "clave": 26,
+                "descripcion": "SONORA"
+            },
+            {
+                "clave": 27,
+                "descripcion": "TABASCO"
+            },
+            {
+                "clave": 28,
+                "descripcion": "TAMAULIPAS"
+            },
+            {
+                "clave": 29,
+                "descripcion": "TLAXCALA"
+            },
+            {
+                "clave": 30,
+                "descripcion": "VERACRUZ DE IGNACIO DE LA LLAVE"
+            },
+            {
+                "clave": 31,
+                "descripcion": "YUCATÁN"
+            },
+            {
+                "clave": 32,
+                "descripcion": "ZACATECAS"
+            },
+            {
+                "clave": 36,
+                "descripcion": "ESTADOS UNIDOS MEXICANOS"
+            },
+            {
+                "clave": 97,
+                "descripcion": "NO APLICA"
+            },
+            {
+                "clave": 98,
+                "descripcion": "SE IGNORA"
+            },
+            {
+                "clave": 99,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    },
+    {
+        "campo": "CLASIFICACION_FINAL",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "CASO DE COVID-19 CONFIRMADO POR ASOCIACIÓN CLÍNICA EPIDEMIOLÓGICA"
+            },
+            {
+                "clave": 2,
+                "descripcion": "CASO DE COVID-19 CONFIRMADO POR COMITÉ DE DICTAMINACIÓN"
+            },
+            {
+                "clave": 3,
+                "descripcion": "CASO DE SARS-COV-2 CONFIRMADO"
+            },
+            {
+                "clave": 4,
+                "descripcion": "INVÁLIDO POR LABORATORIO"
+            },
+            {
+                "clave": 5,
+                "descripcion": "NO REALIZADO POR LABORATORIO"
+            },
+            {
+                "clave": 6,
+                "descripcion": "CASO SOSPECHOSO"
+            },
+            {
+                "clave": 7,
+                "descripcion": "NEGATIVO A SARS-COV-2"
+            }
+        ]
+    },
+    {
+        "campo": "CLASIFICACION_FINAL_FLU",
+        "valores": [
+            {
+                "clave": 3,
+                "descripcion": "CASO DE INFLUENZA CONFIRMADO"
+            },
+            {
+                "clave": 4,
+                "descripcion": "INVÁLIDO POR LABORATORIO"
+            },
+            {
+                "clave": 5,
+                "descripcion": "NO REALIZADO POR LABORATORIO"
+            },
+            {
+                "clave": 6,
+                "descripcion": "CASO SOSPECHOSO"
+            },
+            {
+                "clave": 7,
+                "descripcion": "NEGATIVO A INFLUENZA"
+            }
+        ]
+    },
+    {
+        "campo": "INTUBADO",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "SI"
+            },
+            {
+                "clave": 2,
+                "descripcion": "NO"
+            },
+            {
+                "clave": 97,
+                "descripcion": "NO APLICA"
+            },
+            {
+                "clave": 98,
+                "descripcion": "SE IGNORA"
+            },
+            {
+                "clave": 99,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    },
+    {
+        "campo": "NEUMONIA",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "SI"
+            },
+            {
+                "clave": 2,
+                "descripcion": "NO"
+            },
+            {
+                "clave": 97,
+                "descripcion": "NO APLICA"
+            },
+            {
+                "clave": 98,
+                "descripcion": "SE IGNORA"
+            },
+            {
+                "clave": 99,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    },
+    {
+        "campo": "EMBARAZO",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "SI"
+            },
+            {
+                "clave": 2,
+                "descripcion": "NO"
+            },
+            {
+                "clave": 97,
+                "descripcion": "NO APLICA"
+            },
+            {
+                "clave": 98,
+                "descripcion": "SE IGNORA"
+            },
+            {
+                "clave": 99,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    },
+    {
+        "campo": "HABLA_LENGUA_INDIG",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "SI"
+            },
+            {
+                "clave": 2,
+                "descripcion": "NO"
+            },
+            {
+                "clave": 97,
+                "descripcion": "NO APLICA"
+            },
+            {
+                "clave": 98,
+                "descripcion": "SE IGNORA"
+            },
+            {
+                "clave": 99,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    },
+    {
+        "campo": "INDIGENA",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "SI"
+            },
+            {
+                "clave": 2,
+                "descripcion": "NO"
+            },
+            {
+                "clave": 97,
+                "descripcion": "NO APLICA"
+            },
+            {
+                "clave": 98,
+                "descripcion": "SE IGNORA"
+            },
+            {
+                "clave": 99,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    },
+    {
+        "campo": "DIABETES",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "SI"
+            },
+            {
+                "clave": 2,
+                "descripcion": "NO"
+            },
+            {
+                "clave": 97,
+                "descripcion": "NO APLICA"
+            },
+            {
+                "clave": 98,
+                "descripcion": "SE IGNORA"
+            },
+            {
+                "clave": 99,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    },
+    {
+        "campo": "EPOC",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "SI"
+            },
+            {
+                "clave": 2,
+                "descripcion": "NO"
+            },
+            {
+                "clave": 97,
+                "descripcion": "NO APLICA"
+            },
+            {
+                "clave": 98,
+                "descripcion": "SE IGNORA"
+            },
+            {
+                "clave": 99,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    },
+    {
+        "campo": "ASMA",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "SI"
+            },
+            {
+                "clave": 2,
+                "descripcion": "NO"
+            },
+            {
+                "clave": 97,
+                "descripcion": "NO APLICA"
+            },
+            {
+                "clave": 98,
+                "descripcion": "SE IGNORA"
+            },
+            {
+                "clave": 99,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    },
+    {
+        "campo": "INMUSUPR",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "SI"
+            },
+            {
+                "clave": 2,
+                "descripcion": "NO"
+            },
+            {
+                "clave": 97,
+                "descripcion": "NO APLICA"
+            },
+            {
+                "clave": 98,
+                "descripcion": "SE IGNORA"
+            },
+            {
+                "clave": 99,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    },
+    {
+        "campo": "HIPERTENSION",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "SI"
+            },
+            {
+                "clave": 2,
+                "descripcion": "NO"
+            },
+            {
+                "clave": 97,
+                "descripcion": "NO APLICA"
+            },
+            {
+                "clave": 98,
+                "descripcion": "SE IGNORA"
+            },
+            {
+                "clave": 99,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    },
+    {
+        "campo": "OTRA_COM",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "SI"
+            },
+            {
+                "clave": 2,
+                "descripcion": "NO"
+            },
+            {
+                "clave": 97,
+                "descripcion": "NO APLICA"
+            },
+            {
+                "clave": 98,
+                "descripcion": "SE IGNORA"
+            },
+            {
+                "clave": 99,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    },
+    {
+        "campo": "CARDIOVASCULAR",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "SI"
+            },
+            {
+                "clave": 2,
+                "descripcion": "NO"
+            },
+            {
+                "clave": 97,
+                "descripcion": "NO APLICA"
+            },
+            {
+                "clave": 98,
+                "descripcion": "SE IGNORA"
+            },
+            {
+                "clave": 99,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    },
+    {
+        "campo": "OBESIDAD",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "SI"
+            },
+            {
+                "clave": 2,
+                "descripcion": "NO"
+            },
+            {
+                "clave": 97,
+                "descripcion": "NO APLICA"
+            },
+            {
+                "clave": 98,
+                "descripcion": "SE IGNORA"
+            },
+            {
+                "clave": 99,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    },
+    {
+        "campo": "RENAL_CRONICA",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "SI"
+            },
+            {
+                "clave": 2,
+                "descripcion": "NO"
+            },
+            {
+                "clave": 97,
+                "descripcion": "NO APLICA"
+            },
+            {
+                "clave": 98,
+                "descripcion": "SE IGNORA"
+            },
+            {
+                "clave": 99,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    },
+    {
+        "campo": "TABAQUISMO",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "SI"
+            },
+            {
+                "clave": 2,
+                "descripcion": "NO"
+            },
+            {
+                "clave": 97,
+                "descripcion": "NO APLICA"
+            },
+            {
+                "clave": 98,
+                "descripcion": "SE IGNORA"
+            },
+            {
+                "clave": 99,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    },
+    {
+        "campo": "OTRO_CASO",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "SI"
+            },
+            {
+                "clave": 2,
+                "descripcion": "NO"
+            },
+            {
+                "clave": 97,
+                "descripcion": "NO APLICA"
+            },
+            {
+                "clave": 98,
+                "descripcion": "SE IGNORA"
+            },
+            {
+                "clave": 99,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    },
+    {
+        "campo": "TOMA_MUESTRA_LAB",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "SI"
+            },
+            {
+                "clave": 2,
+                "descripcion": "NO"
+            },
+            {
+                "clave": 97,
+                "descripcion": "NO APLICA"
+            },
+            {
+                "clave": 98,
+                "descripcion": "SE IGNORA"
+            },
+            {
+                "clave": 99,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    },
+    {
+        "campo": "TOMA_MUESTRA_ANTIGENO",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "SI"
+            },
+            {
+                "clave": 2,
+                "descripcion": "NO"
+            },
+            {
+                "clave": 97,
+                "descripcion": "NO APLICA"
+            },
+            {
+                "clave": 98,
+                "descripcion": "SE IGNORA"
+            },
+            {
+                "clave": 99,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    },
+    {
+        "campo": "MIGRANTE",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "SI"
+            },
+            {
+                "clave": 2,
+                "descripcion": "NO"
+            },
+            {
+                "clave": 97,
+                "descripcion": "NO APLICA"
+            },
+            {
+                "clave": 98,
+                "descripcion": "SE IGNORA"
+            },
+            {
+                "clave": 99,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    },
+    {
+        "campo": "UCI",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "SI"
+            },
+            {
+                "clave": 2,
+                "descripcion": "NO"
+            },
+            {
+                "clave": 97,
+                "descripcion": "NO APLICA"
+            },
+            {
+                "clave": 98,
+                "descripcion": "SE IGNORA"
+            },
+            {
+                "clave": 99,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    }
+]

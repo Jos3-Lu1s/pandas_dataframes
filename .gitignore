@@ -4,3 +4,4 @@ venv/
 *.xlsx
 .env
 *.gz
+*__pycache__/
