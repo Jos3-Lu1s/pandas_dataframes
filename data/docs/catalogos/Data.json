@@ -1350,6 +1350,304 @@
         ]
     },
     {
+        "campo": "ENTIDAD_NAC",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "AGUASCALIENTES"
+            },
+            {
+                "clave": 2,
+                "descripcion": "BAJA CALIFORNIA"
+            },
+            {
+                "clave": 3,
+                "descripcion": "BAJA CALIFORNIA SUR"
+            },
+            {
+                "clave": 4,
+                "descripcion": "CAMPECHE"
+            },
+            {
+                "clave": 5,
+                "descripcion": "COAHUILA DE ZARAGOZA"
+            },
+            {
+                "clave": 6,
+                "descripcion": "COLIMA"
+            },
+            {
+                "clave": 7,
+                "descripcion": "CHIAPAS"
+            },
+            {
+                "clave": 8,
+                "descripcion": "CHIHUAHUA"
+            },
+            {
+                "clave": 9,
+                "descripcion": "CIUDAD DE MÉXICO"
+            },
+            {
+                "clave": 10,
+                "descripcion": "DURANGO"
+            },
+            {
+                "clave": 11,
+                "descripcion": "GUANAJUATO"
+            },
+            {
+                "clave": 12,
+                "descripcion": "GUERRERO"
+            },
+            {
+                "clave": 13,
+                "descripcion": "HIDALGO"
+            },
+            {
+                "clave": 14,
+                "descripcion": "JALISCO"
+            },
+            {
+                "clave": 15,
+                "descripcion": "MÉXICO"
+            },
+            {
+                "clave": 16,
+                "descripcion": "MICHOACÁN DE OCAMPO"
+            },
+            {
+                "clave": 17,
+                "descripcion": "MORELOS"
+            },
+            {
+                "clave": 18,
+                "descripcion": "NAYARIT"
+            },
+            {
+                "clave": 19,
+                "descripcion": "NUEVO LEÓN"
+            },
+            {
+                "clave": 20,
+                "descripcion": "OAXACA"
+            },
+            {
+                "clave": 21,
+                "descripcion": "PUEBLA"
+            },
+            {
+                "clave": 22,
+                "descripcion": "QUERÉTARO"
+            },
+            {
+                "clave": 23,
+                "descripcion": "QUINTANA ROO"
+            },
+            {
+                "clave": 24,
+                "descripcion": "SAN LUIS POTOSÍ"
+            },
+            {
+                "clave": 25,
+                "descripcion": "SINALOA"
+            },
+            {
+                "clave": 26,
+                "descripcion": "SONORA"
+            },
+            {
+                "clave": 27,
+                "descripcion": "TABASCO"
+            },
+            {
+                "clave": 28,
+                "descripcion": "TAMAULIPAS"
+            },
+            {
+                "clave": 29,
+                "descripcion": "TLAXCALA"
+            },
+            {
+                "clave": 30,
+                "descripcion": "VERACRUZ DE IGNACIO DE LA LLAVE"
+            },
+            {
+                "clave": 31,
+                "descripcion": "YUCATÁN"
+            },
+            {
+                "clave": 32,
+                "descripcion": "ZACATECAS"
+            },
+            {
+                "clave": 36,
+                "descripcion": "ESTADOS UNIDOS MEXICANOS"
+            },
+            {
+                "clave": 97,
+                "descripcion": "NO APLICA"
+            },
+            {
+                "clave": 98,
+                "descripcion": "SE IGNORA"
+            },
+            {
+                "clave": 99,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    },
+    {
+        "campo": "ENTIDAD_RES",
+        "valores": [
+            {
+                "clave": 1,
+                "descripcion": "AGUASCALIENTES"
+            },
+            {
+                "clave": 2,
+                "descripcion": "BAJA CALIFORNIA"
+            },
+            {
+                "clave": 3,
+                "descripcion": "BAJA CALIFORNIA SUR"
+            },
+            {
+                "clave": 4,
+                "descripcion": "CAMPECHE"
+            },
+            {
+                "clave": 5,
+                "descripcion": "COAHUILA DE ZARAGOZA"
+            },
+            {
+                "clave": 6,
+                "descripcion": "COLIMA"
+            },
+            {
+                "clave": 7,
+                "descripcion": "CHIAPAS"
+            },
+            {
+                "clave": 8,
+                "descripcion": "CHIHUAHUA"
+            },
+            {
+                "clave": 9,
+                "descripcion": "CIUDAD DE MÉXICO"
+            },
+            {
+                "clave": 10,
+                "descripcion": "DURANGO"
+            },
+            {
+                "clave": 11,
+                "descripcion": "GUANAJUATO"
+            },
+            {
+                "clave": 12,
+                "descripcion": "GUERRERO"
+            },
+            {
+                "clave": 13,
+                "descripcion": "HIDALGO"
+            },
+            {
+                "clave": 14,
+                "descripcion": "JALISCO"
+            },
+            {
+                "clave": 15,
+                "descripcion": "MÉXICO"
+            },
+            {
+                "clave": 16,
+                "descripcion": "MICHOACÁN DE OCAMPO"
+            },
+            {
+                "clave": 17,
+                "descripcion": "MORELOS"
+            },
+            {
+                "clave": 18,
+                "descripcion": "NAYARIT"
+            },
+            {
+                "clave": 19,
+                "descripcion": "NUEVO LEÓN"
+            },
+            {
+                "clave": 20,
+                "descripcion": "OAXACA"
+            },
+            {
+                "clave": 21,
+                "descripcion": "PUEBLA"
+            },
+            {
+                "clave": 22,
+                "descripcion": "QUERÉTARO"
+            },
+            {
+                "clave": 23,
+                "descripcion": "QUINTANA ROO"
+            },
+            {
+                "clave": 24,
+                "descripcion": "SAN LUIS POTOSÍ"
+            },
+            {
+                "clave": 25,
+                "descripcion": "SINALOA"
+            },
+            {
+                "clave": 26,
+                "descripcion": "SONORA"
+            },
+            {
+                "clave": 27,
+                "descripcion": "TABASCO"
+            },
+            {
+                "clave": 28,
+                "descripcion": "TAMAULIPAS"
+            },
+            {
+                "clave": 29,
+                "descripcion": "TLAXCALA"
+            },
+            {
+                "clave": 30,
+                "descripcion": "VERACRUZ DE IGNACIO DE LA LLAVE"
+            },
+            {
+                "clave": 31,
+                "descripcion": "YUCATÁN"
+            },
+            {
+                "clave": 32,
+                "descripcion": "ZACATECAS"
+            },
+            {
+                "clave": 36,
+                "descripcion": "ESTADOS UNIDOS MEXICANOS"
+            },
+            {
+                "clave": 97,
+                "descripcion": "NO APLICA"
+            },
+            {
+                "clave": 98,
+                "descripcion": "SE IGNORA"
+            },
+            {
+                "clave": 99,
+                "descripcion": "NO ESPECIFICADO"
+            }
+        ]
+    },
+    {
         "campo": "CLASIFICACION_FINAL",
         "valores": [
             {
